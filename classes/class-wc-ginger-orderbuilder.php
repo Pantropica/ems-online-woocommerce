@@ -67,12 +67,6 @@ class WC_Ginger_Orderbuilder extends WC_Ginger_Gateway
 	{
 		$paymentMethodDetails = [];
 
-		//uses for ideal
-		if ($this instanceof GingerIssuers) {
-			$paymentMethodDetails['issuer_id'] = $this->gingerGetSelectedIssuer();
-			return $paymentMethodDetails;
-		}
-
 		//uses for afterpay
 		if ($this instanceof GingerTermsAndConditions) {
 			$termsAndConditionFlag = WC_Ginger_Helper::gingerGetCustomPaymentField('toc');
